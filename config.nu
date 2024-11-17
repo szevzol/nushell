@@ -862,18 +862,18 @@ $env.config = {
 $env.POSH_THEME = "~/.config/pwsh/poshthemes/powerlevel10k_lean.omp.json"
 source ~/.oh-my-posh.nu
 
-$env.config = ($env.config | upsert hooks.env_change.PWD {
-    [
-        {
-          condition: {|_, after| $after | path join 'env.nu' | path exists}
-          code: "overlay use env.nu"
-        }
-        {
-          condition: {|_, after| not ($after | path join 'env.nu' | path exists)}
-          code: "hide env"
-        }
-    ]
-})
+#$env.config = ($env.config | upsert hooks.env_change.PWD {
+#    [
+#        {
+#          condition: {|_, after| $after | path join 'env.nu' | path exists}
+#          code: "overlay use env.nu"
+#        }
+#        {
+#          condition: {|_, after| not ($after | path join 'env.nu' | path exists)}
+#          code: "hide env"
+#        }
+#    ]
+#})
 
 source ~/.zoxide.nu
 
